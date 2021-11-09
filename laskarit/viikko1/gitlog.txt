@@ -1,0 +1,159 @@
+commit d00fb0415a3d1653458149895866aca044cfe26e
+Author: Nella <netu@DESKTOP-6KS79AP.localdomain>
+Date:   Tue Nov 9 19:11:53 2021 +0200
+
+    poistettiin tiedosto fil1 ja nimettiin file2 file22:ksi
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit b845b0399e5e97dbabcbe3f4958933373ea21869
+Author: Nella <netu@DESKTOP-6KS79AP.localdomain>
+Date:   Tue Nov 9 19:05:06 2021 +0200
+
+    uusi dir tiedostoja ja filet 1,2,3 uudestaan
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 0c93fb230f19631d8d94a8066f464906394fafe1
+Author: Nella Nieminen <ncnella@ad.helsinki.fi>
+Date:   Tue Nov 9 19:02:38 2021 +0200
+
+    Revert "uusi dir tiedostoja ja filet 1, 2 ja 3"
+
+    This reverts commit 1cc80b91f6a29cd39296b3fa4ea6cbbab5310e25.
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 1cc80b91f6a29cd39296b3fa4ea6cbbab5310e25
+Author: Nella <netu@DESKTOP-6KS79AP.localdomain>
+Date:   Tue Nov 9 08:29:30 2021 +0200
+
+    uusi dir tiedostoja ja filet 1, 2 ja 3
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit b0a4b8bd3ae044f7157320a277cc31f5b92baffb
+Author: Nella <netu@DESKTOP-6KS79AP.localdomain>
+Date:   Tue Nov 9 08:15:03 2021 +0200
+
+    vahinko lisäys committoitavaksi
+
+ eka.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 675ba499aec9975a4664b8dd86f79538b7481b4a
+Author: Nella <netu@DESKTOP-6KS79AP.localdomain>
+Date:   Tue Nov 9 08:09:11 2021 +0200
+
+    poistettiin ja lisättiin tekstiä ekaan ja kolmanteen
+
+ eka.txt      |   5 +-
+ kolmas.txt   |   5 +-
+ tiedosto.txt | 161 -----------------------------------------------------------
+ 3 files changed, 6 insertions(+), 165 deletions(-)
+
+commit 8be111543d78c70a5300cf633619c6c850acc597
+Author: Nella <netu@DESKTOP-6KS79AP.localdomain>
+Date:   Tue Nov 9 08:04:22 2021 +0200
+
+    tiedoston nimi muutettiin tiedostosta ekaksi
+
+ eka.txt | 161 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 161 insertions(+)
+
+commit 7883ed3b1f641a2486b7a7906f92756515c2dbe4
+Author: Nella <netu@DESKTOP-6KS79AP.localdomain>
+Date:   Tue Nov 9 07:59:15 2021 +0200
+
+    poista osa tiedoston tekstistä ja lisää hieman uutta
+
+ tiedosto.txt | 19 +++----------------
+ 1 file changed, 3 insertions(+), 16 deletions(-)
+
+commit a60e0a8b0c781cc30ce0ef22a75ccf1daf6886f6
+Author: Nella <netu@DESKTOP-6KS79AP.localdomain>
+Date:   Tue Nov 9 07:57:10 2021 +0200
+
+    lisää paljon tekstiä
+
+ tiedosto.txt | 175 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 174 insertions(+), 1 deletion(-)
+
+commit 71ebf718b723b7a66504321ad03779b4ee16498b
+Author: Nella Nieminen <ncnella@ad.helsinki.fi>
+Date:   Tue Nov 9 07:55:28 2021 +0200
+
+    Revert "muutoksia filessä"
+
+    This reverts commit 64042e628de68eb19fecd87ebf3d1805362d04a5.
+
+ tiedosto.txt | 170 +----------------------------------------------------------
+ 1 file changed, 1 insertion(+), 169 deletions(-)
+
+commit ec0d01b1cfe471ed5cceb36510adc701d79d71c6
+Author: Nella <netu@DESKTOP-6KS79AP.localdomain>
+Date:   Tue Nov 9 07:48:34 2021 +0200
+
+    toinen.txt poistettiin
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 64042e628de68eb19fecd87ebf3d1805362d04a5
+Author: Nella <netu@DESKTOP-6KS79AP.localdomain>
+Date:   Tue Nov 9 07:40:51 2021 +0200
+
+    muutoksia filessä
+
+ tiedosto.txt | 170 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 169 insertions(+), 1 deletion(-)
+
+commit 1b5e73c16f2835870eece78a26c33423706dab97
+Author: Nella <netu@DESKTOP-6KS79AP.localdomain>
+Date:   Mon Nov 8 20:06:54 2021 +0200
+
+    muokattu kahta sekä luotu uusi dir ja file
+
+ kolmas.txt               | 1 +
+ stuff/jokin_tiedosto.txt | 0
+ toinen.txt               | 1 +
+ 3 files changed, 2 insertions(+)
+
+commit f95a4e3fe34eafbc66cc7f38976152bf6b421257
+Author: Nella <netu@DESKTOP-6KS79AP.localdomain>
+Date:   Mon Nov 8 19:59:07 2021 +0200
+
+    lisättiin uusi file
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit e8269dff20591b3510f26795571a8fcddfe6d3bb
+Author: Nella <netu@DESKTOP-6KS79AP.localdomain>
+Date:   Mon Nov 8 19:40:52 2021 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit baa42da1aa496df50dcfd6efbad7e5522b2fdc39
+Author: Nella <netu@DESKTOP-6KS79AP.localdomain>
+Date:   Mon Nov 8 19:29:48 2021 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
