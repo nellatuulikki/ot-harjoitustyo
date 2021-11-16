@@ -25,7 +25,7 @@ Sovellus tarvitsee toimiakseen kahta käyttäjää. Myöhemmin on myös mahdolli
 - Ruudulle ilmestyy voittajan nimi
 - Pelaajilta kysytään haluavatko he pelata uudestaan
 
-## Jarkokehitysideat
+## Jatkokehitysideat
 - Pelaajat voivat itse määritellä pelilaudan koon
 - Pelaajat pystyisivät luomaan sovellukseen käyttäjätunnuksen ja salasanan, joilla on mahdollista kirjautua sovellukseen uudestaan
 - Sovellus tallentaa tietoja käyttäjätunnuksen luoneista pelaajista (esimerkiksi hävityt ja voitetut pelit)
