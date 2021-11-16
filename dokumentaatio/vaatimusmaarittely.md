@@ -33,3 +33,4 @@ Sovellus tarvitsee toimiakseen kahta käyttäjää. Myöhemmin on myös mahdolli
 -Pelaajien on mahdollista tarkastella miten he ovat pärjänneet
  -Tilastoja voitaisiin tarkastella erilaisilla kuvaajilla ja taulukoilla
 -Pelaaja pystyy poistamaan käyttäjänsä sovelluksesta
+
