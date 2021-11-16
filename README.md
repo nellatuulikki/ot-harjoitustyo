@@ -13,6 +13,6 @@
 
 ## Viikko 2
 
-[Vaatimusmaarittely] https://github.com/nellatuulikki/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md
+[vaatimusmaarittely.md] https://github.com/nellatuulikki/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md
 
-[Työaikakirjanpito] https://github.com/nellatuulikki/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md
+[tuntikirjanpito.md] https://github.com/nellatuulikki/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md
