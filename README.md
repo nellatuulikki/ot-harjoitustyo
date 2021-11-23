@@ -2,17 +2,39 @@
 
 
 
-## Tehtävät
+## TicTacToe
 
-## Viikko 1
+Sovelluksen avulla kaksi pelaajaa voi pelata ristinollaa 3x3 pelilaudalla.
 
+## Dokumentaatio
 
-[gitlog.txt](https://github.com/nellatuulikki/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+[Vaatimuusmäärittely](https://github.com/nellatuulikki/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
-[komentorivi.txt](https://github.com/nellatuulikki/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
+[Työaikakirjanpito](https://github.com/nellatuulikki/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 
-## Viikko 2
+## Sovelluksen asennus
 
-[vaatimusmaarittely.md](https://github.com/nellatuulikki/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+### Aseta riippuvuudet 
 
-[tuntikirjanpito.md](https://github.com/nellatuulikki/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
+  poetry install
+  
+### Käynnistä sovellus 
+  
+  poetry run invoke start
+  
+## Komentorivitoimintoja
+ 
+### Sovelluksen ajo
+ 
+  poetry run invoke start
+ 
+### Sovelluksen testaus
+ 
+  poetry run invoke test
+  
+### Testikattavuus raportin generointi
+ 
+  poetry run invoke coverage-report
+  
+  raportti löytyy htmlcov-hakemistosta
+ 
