@@ -1,0 +1,15 @@
+# Käyttöohje
+
+Aja komento ennen itse sovelluksen ajoa
+
+poetry install
+
+Ohjelma käynnistetään
+
+poetry run invoke start
+
+Peli alkaa tyhjältä pelilaudalta. 
+
+
+
+Pelissä on kaksi pelaaja Mikko ja Nella, jotka vuorotellan painavat pelilaudan nappulo
