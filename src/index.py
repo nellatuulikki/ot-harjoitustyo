@@ -1,6 +1,6 @@
 from tkinter import Tk
 from ui.play_view import Tic_tac_toe_UI
-from repositories.player_repository import Player
+from entities.player_repository import Player
 import os
 
 

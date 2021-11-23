@@ -6,8 +6,8 @@ class Tic_tac_toe_UI:
 
     def __init__(self, root, player1, player2):
         self._root = root
-        self.player1 = player1.name
-        self.player2 = player2.name
+        self.player1 = player1.get_name()
+        self.player2 = player2.get_name()
         self.player_1_turn = True
         self.game_board = None
         self.winner = None
