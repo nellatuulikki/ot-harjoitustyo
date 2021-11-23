@@ -2,12 +2,13 @@ import tkinter as tk
 import os
 
 
-class Tic_tac_toe_UI():
+class Tic_tac_toe_UI:
 
-    def __init__(self, root):
+    def __init__(self, root, player1, player2):
         self._root = root
+        self.player1 = player1.name
+        self.player2 = player2.name
         self.player_1_turn = True
-        self.end_state = False
         self.game_board = None
         self.winner = None
 
@@ -34,7 +35,7 @@ class Tic_tac_toe_UI():
         b9 = tk.Button(master=self._root, text="", height=5, width=10,
                        command=lambda: self.make_move(b9, status_label, 2, 2))
 
-        status_label = tk.Label(text="Let's play Tic Tac Toe! It's Player 1 turn to make a move")
+        status_label = tk.Label(text=f"Let's play Tic Tac Toe! It's {self.player1} turn to make a move")
 
         status_label.grid(row=0)
         b1.grid(row=2, column=0)
@@ -72,14 +73,14 @@ class Tic_tac_toe_UI():
                 button.config(text="X")
                 self.game_board[row][column] = 'X'
                 self.player_1_turn = False
-                label.config(text="Let's play Tic Tac Toe! It's Player 2 turn to make a move")
+                label.config(text=f"Let's play Tic Tac Toe! It's {self.player2}'s turn to make a move")
 
             elif self.player_1_turn is False:
 
                 button.config(text="O")
                 self.game_board[row][column] = 'O'
                 self.player_1_turn = True
-                label.config(text="Let's play Tic Tac Toe! It's Player 1 turn to make a move")
+                label.config(text=f"Let's play Tic Tac Toe! It's {self.player1}'s turn to make a move")
 
         self.get_game_status()
 
@@ -96,7 +97,7 @@ class Tic_tac_toe_UI():
                     2] == self.game_board[1][2] == self.game_board[2][2] == "X" or
                 self.game_board[0][0] == self.game_board[1][1] == self.game_board[2][2] == "X" or self.game_board[0][
                     2] == self.game_board[1][1] == self.game_board[2][0] == "X"):
-            self.winner = "Player 1"
+            self.winner = self.player1
 
         elif (self.game_board[0][0] == self.game_board[0][1] == self.game_board[0][2] == "O" or self.game_board[1][0] ==
               self.game_board[1][1] == self.game_board[1][2] == "O" or
@@ -106,7 +107,7 @@ class Tic_tac_toe_UI():
               self.game_board[1][2] == self.game_board[2][2] == "O" or
               self.game_board[0][0] == self.game_board[1][1] == self.game_board[2][2] == "O" or self.game_board[0][2] ==
               self.game_board[1][1] == self.game_board[2][0] == "O"):
-            self.winner = "Player 2"
+            self.winner = self.player2
 
     def end_game(self, label):
         if self.winner is None:
