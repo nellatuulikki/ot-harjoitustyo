@@ -28,4 +28,4 @@ Viimeisteltiin viikon 3 harkat 5h
 
 6h sovelluskehitystä, pylint testausta ja koodinlaadun parannusta.
 
-Yht= 26h
+Yhteensä 26h käytetty
