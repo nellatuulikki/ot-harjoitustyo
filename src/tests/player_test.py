@@ -1,5 +1,5 @@
 import unittest
-from src.entities.player_repository import Player
+from entities.player_repository import Player
 
 
 class TestPlayer(unittest.TestCase):
