@@ -1,5 +1,3 @@
-
-
 class Player:
 
     def __init__(self, name):
@@ -11,7 +9,7 @@ class Player:
     def get_name(self):
         return self.name
 
-    def player_wins(self):
+    def add_win(self):
         self.wins += 1
 
     def get_wins(self):

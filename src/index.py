@@ -1,15 +1,11 @@
 from tkinter import Tk
-from ui.play_view import Tic_tac_toe_UI
-from entities.player_repository import Player
-import os
+from ui.ui import UI
 
 
 def main():
-    player1 = Player('Mikko')
-    player2 = Player('Nella')
     window = Tk()
-    window.title('Tic Tac Toe game')
-    ui = Tic_tac_toe_UI(window, player1, player2)
+    window.title('Tic-Tac-Toe')
+    ui = UI(window)
     ui.start()
     window.mainloop()
 
