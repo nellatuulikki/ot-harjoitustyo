@@ -19,6 +19,6 @@ Sovelluksen tietomalli koostuu kahdesta luokasta Player ja Game. Player luokka s
 
 ![image](https://user-images.githubusercontent.com/94007460/144122858-00f06919-d692-415d-90e9-2247380f466a.png)
 
-Play_service luokka vastaa sovelluslogiikasta.
+Playservice luokka vastaa sovelluslogiikasta ja se mahdollistaa käyttöliittymän pääsyn luokkiin Game ja Player. Myöhemmin kurssin aikana sovellukseen lisätään pakkaus repositories ja sen luokat GameRepository ja UserRepository.
 
 ![image](https://user-images.githubusercontent.com/94007460/144127917-12080828-1ad8-460d-9d0a-10b54aa061e1.png)
