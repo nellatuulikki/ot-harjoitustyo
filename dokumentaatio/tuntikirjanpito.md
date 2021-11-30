@@ -27,3 +27,5 @@ Viimeisteltiin viikon 3 harkat 5h
 # 30.11.2021
 
 6h sovelluskehitystä, pylint testausta ja koodinlaadun parannusta.
+
+Yht= 26h
