@@ -8,6 +8,9 @@ Sovelluksen avulla kaksi pelaajaa voi pelata ristinollaa 3x3 pelilaudalla.
 
 ## Dokumentaatio
 
+
+[Arkkitehtuurikuvaus](https://github.com/nellatuulikki/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+
 [Vaatimuusmäärittely](https://github.com/nellatuulikki/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
 [Työaikakirjanpito](https://github.com/nellatuulikki/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
