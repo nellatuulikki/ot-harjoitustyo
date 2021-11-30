@@ -1,5 +1,5 @@
-from src.entities.player_repository import Player
-from src.entities.game_repository import Game
+from entities.player_repository import Player
+from entities.game_repository import Game
 
 
 class PlayService:

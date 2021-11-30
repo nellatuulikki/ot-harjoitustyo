@@ -1,5 +1,5 @@
 from tkinter import ttk, constants
-from src.services.play_service import play_service
+from services.play_service import play_service
 
 
 class NamePlayersView:

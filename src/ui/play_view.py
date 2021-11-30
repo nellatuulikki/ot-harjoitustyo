@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import constants
-from src.services.play_service import play_service
+from services.play_service import play_service
 
 
 class TicTacToeView:
