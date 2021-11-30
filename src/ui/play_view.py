@@ -41,7 +41,7 @@ class TicTacToeView:
 
         status_label = tk.Label(self._frame, text=f"Let's play Tic Tac Toe! It's {self.player1}'s turn to make a move")
 
-        status_label.grid(row=0, columnspan=3)
+        status_label.grid(row=0, columnspan=6)
         b1.grid(row=1, column=0)
         b2.grid(row=1, column=1)
         b3.grid(row=1, column=2)

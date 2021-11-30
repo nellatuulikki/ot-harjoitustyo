@@ -1,5 +1,5 @@
 import unittest
-from entities.player_repository import Player
+from src.entities.player import Player
 
 
 class TestPlayer(unittest.TestCase):
@@ -9,3 +9,4 @@ class TestPlayer(unittest.TestCase):
 
     def test_nimi_asetettu_oikein(self):
         self.assertEqual(self.player.get_name(), 'Mikko')
+

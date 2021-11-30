@@ -1,30 +1,22 @@
 class Game:
 
     def __init__(self, player_1, player_2):
-        """"Luokka jossa säilytetään tietoja pelaajista"""
 
         self.player_1 = player_1
         self.player_2 = player_2
         self.winner = 'No winner yet'
         self.player_1_turn = True
         self.game_board = None
-        self.create_game_board(3, 3)
+        self.create_game_board(3)
 
-    def create_game_board(self, height, length):
+    def create_game_board(self, height):
 
         board = []
 
-        for i in range(0, height):
-            row = []
-            for j in range(0, length):
-                row.append("")
-            board.append(row)
+        for _ in range(0, height):
+            board.append(['']*height)
 
         self.game_board = board
-
-    def get_result(self):
-
-        return self.name
 
     def add_winner(self, player):
 
@@ -46,9 +38,6 @@ class Game:
         else:
             self.player_1_turn = True
 
-    def whose_turn(self):
-
-        return self.player_1_turn
 
     def player_1_makes_move(self, row, column):
 

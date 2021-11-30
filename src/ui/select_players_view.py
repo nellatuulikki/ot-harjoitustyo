@@ -46,7 +46,7 @@ class NamePlayersView:
         label = ttk.Label(self._frame,
                           text="Let's play Tic-Tac-Toe! Who are playing today?")
         board_size_label = ttk.Label(self._frame,
-                                     text='The game board size is 3x3')
+                                     text="The game board size is 3x3 and Player 1 plays X, Player 2 plays O")
 
         play_button = ttk.Button(self._frame,
                                  text='Start the game',
