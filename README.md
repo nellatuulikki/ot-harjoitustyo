@@ -40,4 +40,10 @@ Sovelluksen avulla kaksi pelaajaa voi pelata ristinollaa 3x3 pelilaudalla.
   poetry run invoke coverage-report
   
   raportti löytyy htmlcov-hakemistosta
+  
+### PyLint
+  
+  Tiedostossa .pylintrc olevat tarkistukset suoritetaan komennolla:
+  
+  poetry run invoke lint
  
