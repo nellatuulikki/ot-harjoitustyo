@@ -15,7 +15,7 @@ Sovelluksen avulla kaksi pelaajaa voi pelata ristinollaa 3x3 pelilaudalla.
 
 [Työaikakirjanpito](https://github.com/nellatuulikki/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 
-[Release]https://github.com/nellatuulikki/ot-harjoitustyo/releases/tag/vk5
+[Release](https://github.com/nellatuulikki/ot-harjoitustyo/releases/tag/vk5)
 
 ## Sovelluksen asennus
 
