@@ -13,7 +13,7 @@ Sovellus tarvitsee toimiakseen kahta käyttäjää. Myöhemmin on myös mahdolli
 ### Ennen pelin alkua
 
 - Pelaajat määrittelevät nimensä ja päättävät kumpaa puolta pelaavat "tehty"
-- Pelaajan nimi voi olla vain 10 merkkiä pitkä.
+- Pelaajan nimi voi olla vain 10 merkkiä pitkä. "tehty"
 - Pelialustan koko määritellään. Perusversiossa vaihtoehtona on vain 3x3 alusta. "tehty"
 
 ### Pelin aikana
@@ -24,7 +24,7 @@ Sovellus tarvitsee toimiakseen kahta käyttäjää. Myöhemmin on myös mahdolli
 
 ### Pelin loppuessa
 - Ruudulle ilmestyy voittajan nimi. "tehty"
-- Pelaajilta kysytään haluavatko he pelata uudestaan
+- Pelaajilta kysytään haluavatko he pelata uudestaan "tehty"
 
 ## Jatkokehitysideat
 - Pelaajat voivat itse määritellä pelilaudan koon.
