@@ -28,4 +28,10 @@ Viimeisteltiin viikon 3 harkat 5h
 
 6h sovelluskehitystä, pylint testausta ja koodinlaadun parannusta.
 
-Yhteensä 26h käytetty
+# 5-7.12.2021
+
+5.12 Sovelluskehitystä 2h
+6.12 Sovelluskehitystä 2h
+7.12 Sovelluskehitystä, release testausta, repon pävitys 5h
+
+Yhteensä 25h käytetty
