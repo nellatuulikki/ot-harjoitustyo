@@ -1,13 +1,18 @@
 class Game:
 
-    def __init__(self, player_1, player_2):
+    def __init__(self, player_1, player_2, board_size):
 
         self.player_1 = player_1
         self.player_2 = player_2
+        self.game_board_size = board_size
+        self.winner = None
+        self.player_1_turn = None
+        self.game_board = None
+
+    def initialize_game(self):
+        self.create_game_board(3)
         self.winner = 'No winner yet'
         self.player_1_turn = True
-        self.game_board = None
-        self.create_game_board(3)
 
     def create_game_board(self, height):
 
@@ -37,7 +42,6 @@ class Game:
             self.player_1_turn = False
         else:
             self.player_1_turn = True
-
 
     def player_1_makes_move(self, row, column):
 
@@ -75,3 +79,4 @@ class Game:
 
         elif any("" in row for row in self.game_board) is False:
             self.winner = 'No winner'
+

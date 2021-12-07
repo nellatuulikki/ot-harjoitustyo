@@ -8,9 +8,9 @@ class NamePlayersView:
         self._root = root
         self._frame = None
         self._handle_show_play_view = handle_show_play_view
-        self._initialize()
         self._player_1_entry = None
         self._player_2_entry = None
+        self._board_size_entry = None
 
         self._initialize()
 
@@ -38,8 +38,18 @@ class NamePlayersView:
         player1 = self.player_1_entry.get()
         player2 = self.player_2_entry.get()
 
-        play_service.create_players(player1, player2)
-        self._handle_show_play_view()
+        if len(player1) > 10:
+            error_label = ttk.Label(self._frame, text=f'Too long name for Player 1')
+            error_label.grid(row=9, column=1)
+
+        elif len(player2) > 10:
+            error_label = ttk.Label(self._frame, text=f'Too long name for Player 2')
+            error_label.grid(row=9, column=1)
+
+        else:
+            play_service.create_players(player1, player2, 3)
+
+            self._handle_show_play_view()
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)

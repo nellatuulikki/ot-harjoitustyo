@@ -5,11 +5,13 @@ from services.play_service import play_service
 
 class TicTacToeView:
 
-    def __init__(self, root):
+    def __init__(self, root, handle_end_view):
         self._root = root
         self._frame = None
+        self.handle_end_view = handle_end_view
         self.player1 = play_service.get_player_1()
         self.player2 = play_service.get_player_2()
+        play_service.start_new_game()
         self._initialize()
 
     def destroy(self):
@@ -19,6 +21,10 @@ class TicTacToeView:
         self._frame.pack(fill=constants.X)
 
     def _handle_board(self):
+
+        status_label = tk.Label(self._frame, text=f"Let's play Tic Tac Toe! It's {self.player1}'s turn to make a move")
+
+        status_label.grid(row=0, columnspan=6)
 
         b1 = tk.Button(master=self._frame, text="", height=6, width=11,
                        command=lambda: self._handle_make_move(b1, status_label, 0, 0))
@@ -39,9 +45,6 @@ class TicTacToeView:
         b9 = tk.Button(master=self._frame, text="", height=6, width=11,
                        command=lambda: self._handle_make_move(b9, status_label, 2, 2))
 
-        status_label = tk.Label(self._frame, text=f"Let's play Tic Tac Toe! It's {self.player1}'s turn to make a move")
-
-        status_label.grid(row=0, columnspan=6)
         b1.grid(row=1, column=0)
         b2.grid(row=1, column=1)
         b3.grid(row=1, column=2)
@@ -73,16 +76,7 @@ class TicTacToeView:
                 label.config(text=f"Let's play Tic Tac Toe! It's {self.player1}'s turn to make a move")
 
         if play_service.get_winner() != 'No winner yet':
-            self._handle_end_game(label)
-
-    def _handle_end_game(self, label):
-
-        if play_service.get_winner() == 'No winner':
-            label.config(text="The Game is over! No winner for this round")
-        else:
-            label.config(text=f"The Game is over! Winner is {play_service.get_winner()}")
-
-        # self._frame.after(10000, self._frame.destroy)
+            self._frame.after(5000, self.handle_end_view())
 
     def _initialize(self):
 
@@ -90,4 +84,3 @@ class TicTacToeView:
 
         self._handle_board()
 
-        # self._frame.grid_columnconfigure(0, weight=1, minsize=200)
