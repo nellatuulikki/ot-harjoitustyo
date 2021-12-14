@@ -28,7 +28,7 @@ class TicTacToeView:
 
         for row in range(0, play_service.get_height()):
             list_of_buttons = []
-            for col in range(0, play_service.get_length()):
+            for col in range(0, play_service.get_width()):
                 button = tk.Button(master=self._frame,
                                    text="",
                                    height=6,
@@ -41,7 +41,6 @@ class TicTacToeView:
 
     def _handle_make_move(self, row, column, label):
 
-        print(row, column)
         if play_service.get_winner() == 'No winner yet':
 
             if self.buttons[row][column]['text']:

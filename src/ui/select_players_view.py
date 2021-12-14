@@ -35,21 +35,21 @@ class NamePlayersView:
         self.player_2_entry.grid(row=4, column=1)
 
     def _initialize_board_size_field(self):
-        board_height_label = ttk.Label(self._frame, text='Board height')
+        board_height_label = ttk.Label(self._frame, text='Board width')
         self.board_height_entry = ttk.Entry(self._frame)
 
-        board_length_label = ttk.Label(self._frame, text='Board length')
-        self.board_length_entry = ttk.Entry(self._frame)
+        board_width_label = ttk.Label(self._frame, text='Board length')
+        self.board_width_entry = ttk.Entry(self._frame)
 
         board_height_label.grid(row=6, column=0)
         self.board_height_entry.grid(row=6, column=1)
 
-        board_length_label.grid(row=7, column=0)
-        self.board_length_entry.grid(row=7, column=1)
+        board_width_label.grid(row=7, column=0)
+        self.board_width_entry.grid(row=7, column=1)
 
     def _start_play_handler(self):
         player1, player2 = self.player_1_entry.get(), self.player_2_entry.get()
-        board_height, board_length = self.board_height_entry.get(), self.board_length_entry.get()
+        board_height, board_length = self.board_height_entry.get(), self.board_width_entry.get()
 
         if len(player1) > 10:
             error_label = ttk.Label(self._frame, text=f'Too long name for Player 1')
