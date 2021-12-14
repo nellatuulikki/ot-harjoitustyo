@@ -17,7 +17,7 @@ Sovelluksen avulla kaksi pelaajaa voi pelata ristinollaa pelilaudalla. HUOM! Pel
 
 [Käyttöohje](https://github.com/nellatuulikki/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
 
-[Testaus] (https://github.com/nellatuulikki/ot-harjoitustyo/blob/master/dokumentaatio/testaus) 
+[Testaus](https://github.com/nellatuulikki/ot-harjoitustyo/blob/master/dokumentaatio/testaus) 
 
 [Release](https://github.com/nellatuulikki/ot-harjoitustyo/releases/tag/vk5)
 
