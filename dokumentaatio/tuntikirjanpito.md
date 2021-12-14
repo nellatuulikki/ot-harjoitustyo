@@ -34,4 +34,10 @@ Viimeisteltiin viikon 3 harkat 5h
 6.12 Sovelluskehitystä 2h
 7.12 Sovelluskehitystä, release testausta, repon pävitys 5h
 
+# 13-14.12.2021
+
+14.12.2021 Sovelluskehitystä 5h
+15.12.2021 docstringien tekoja, sovelluskehitystä, repon päivitystä, uusi release 3h
+
+
 Yhteensä 25h käytetty
