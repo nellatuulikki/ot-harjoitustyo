@@ -8,15 +8,26 @@ class PlayService:
         self.player_1 = None
         self.player_2 = None
         self.game = None
+        self.board_height = None
+        self.board_length = None
 
-    def create_players(self, player_1, player_2, board_size):
+    def create_players(self, player_1, player_2, board_height, board_length):
 
-        self.player_1 = Player(player_1)
-        self.player_2 = Player(player_2)
-        self.game = Game(self.player_1, self.player_2, board_size)
+        self.player_1, self.player_2 = Player(player_1), Player(player_2)
+        self.board_length, self.board_height = board_length, board_height
+
+        self.game = Game(self.player_1, self.player_2, board_height, board_length)
 
     def start_new_game(self):
         self.game.initialize_game()
+
+    def get_height(self):
+
+        return self.board_height
+
+    def get_length(self):
+
+        return self.board_length
 
     def get_player_1(self):
 

@@ -34,9 +34,22 @@ class NamePlayersView:
         player_2_label.grid(row=4, column=0)
         self.player_2_entry.grid(row=4, column=1)
 
+    def _initialize_board_size_field(self):
+        board_height_label = ttk.Label(self._frame, text='Board height')
+        self.board_height_entry = ttk.Entry(self._frame)
+
+        board_length_label = ttk.Label(self._frame, text='Board length')
+        self.board_length_entry = ttk.Entry(self._frame)
+
+        board_height_label.grid(row=6, column=0)
+        self.board_height_entry.grid(row=6, column=1)
+
+        board_length_label.grid(row=7, column=0)
+        self.board_length_entry.grid(row=7, column=1)
+
     def _start_play_handler(self):
-        player1 = self.player_1_entry.get()
-        player2 = self.player_2_entry.get()
+        player1, player2 = self.player_1_entry.get(), self.player_2_entry.get()
+        board_height, board_length = self.board_height_entry.get(), self.board_length_entry.get()
 
         if len(player1) > 10:
             error_label = ttk.Label(self._frame, text=f'Too long name for Player 1')
@@ -47,7 +60,10 @@ class NamePlayersView:
             error_label.grid(row=9, column=1)
 
         else:
-            play_service.create_players(player1, player2, 3)
+            play_service.create_players(player1,
+                                        player2,
+                                        int(board_height),
+                                        int(board_length))
 
             self._handle_show_play_view()
 
@@ -55,19 +71,17 @@ class NamePlayersView:
         self._frame = ttk.Frame(master=self._root)
         label = ttk.Label(self._frame,
                           text="Let's play Tic-Tac-Toe! Who are playing today?")
-        board_size_label = ttk.Label(self._frame,
-                                     text="The game board size is 3x3 and Player 1 plays X, Player 2 plays O")
 
         play_button = ttk.Button(self._frame,
                                  text='Start the game',
                                  command=self._start_play_handler)
 
         label.grid(row=0, column=0)
-        board_size_label.grid(row=6, column=0)
         play_button.grid(row=8, column=0)
 
         self._initialize_player_1_field()
         self._initialize_player_2_field()
+        self._initialize_board_size_field()
 
         self._frame.grid_columnconfigure(0, weight=1, minsize=400)
 
