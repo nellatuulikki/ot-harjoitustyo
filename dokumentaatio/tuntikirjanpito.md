@@ -40,4 +40,4 @@ Viimeisteltiin viikon 3 harkat 5h
 15.12.2021 docstringien tekoja, sovelluskehitystä, repon päivitystä, uusi release 3h
 
 
-Yhteensä 25h käytetty
+Yhteensä 33h käytetty
