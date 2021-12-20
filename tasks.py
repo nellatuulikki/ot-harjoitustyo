@@ -1,4 +1,3 @@
-
 from invoke import task
 
 @task
@@ -11,7 +10,7 @@ def test(ctx):
 
 @task
 def coverage(ctx):
-	ctx.run("coverage run --branch -m pytest")
+	ctx.run("coverage run --branch -m pytest src")
 
 @task(coverage)
 def coverage_report(ctx):
@@ -21,3 +20,7 @@ def coverage_report(ctx):
 @task
 def lint(ctx):
 	ctx.run("pylint src")
+
+@task
+def build(ctx):
+	ctx.run("python3 src/build.py")
