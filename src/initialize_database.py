@@ -1,7 +1,7 @@
 from database_connection import get_database_connection
 
 
-def drop_tables(connection):
+def drop_games(connection):
 
     cursor = connection.cursor()
 
@@ -12,7 +12,18 @@ def drop_tables(connection):
     connection.commit()
 
 
-def create_tables(connection):
+def drop_players(connection):
+
+    cursor = connection.cursor()
+
+    cursor.execute("""
+        drop table if exists players;
+    """)
+
+    connection.commit()
+
+
+def create_games(connection):
 
     cursor = connection.cursor()
 
@@ -32,12 +43,29 @@ def create_tables(connection):
     connection.commit()
 
 
+def create_players(connection):
+
+    cursor = connection.cursor()
+
+    cursor.execute("""
+        create table players(
+            name text primary key,
+            wins int,
+            defeats int
+        );
+    """)
+
+    connection.commit()
+
+
 def initialize_database():
 
     connection = get_database_connection()
 
-    drop_tables(connection)
-    create_tables(connection)
+    drop_players(connection)
+    drop_games(connection)
+    create_games(connection)
+    create_players(connection)
 
 
 if __name__ == '__main__':

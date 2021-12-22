@@ -10,6 +10,7 @@ class EndView:
         self.handle_play = handle_play
         self.handle_return = handle_return
         self._initialize()
+        play_service.save_game()
 
     def destroy(self):
         self._frame.destroy()
@@ -47,7 +48,5 @@ class EndView:
 
     def _initialize(self):
         self._frame = tk.Frame(master=self._root)
-
         self._initialize_headers()
-
         self._initialize_buttons()

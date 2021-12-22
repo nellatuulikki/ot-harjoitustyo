@@ -1,0 +1,78 @@
+from src.database_connection import get_database_connection
+import pandas as pd
+from src.entities.player import Player
+
+
+class PlayerRepository:
+
+    def __init__(self, connection):
+
+        self._connection = connection
+
+    def create_player(self, name):
+
+        cursor = self._connection.cursor()
+
+        cursor.execute(
+            'insert into players (name, wins, defeats) values (?,?,?)',
+            (name, 0, 0)
+        )
+
+        self._connection.commit()
+
+    def find_all(self):
+
+        query = 'select * from players'
+        all_df = pd.read_sql(query, self._connection)
+
+        return all_df
+
+    def get_top_ten(self):
+
+        query = 'select name, wins, defeats from players order by wins desc limit 5'
+        top_ten_df = pd.read_sql(query, self._connection)
+
+        return top_ten_df
+
+    def check_player(self, name):
+        cursor = self._connection.cursor()
+
+        cursor.execute(
+            'select * from players where name = ?', (name,)
+        )
+
+        row = cursor.fetchone()
+        return row
+
+    def update_wins(self, player):
+        wins = player.get_wins() + 1
+
+        cursor = self._connection.cursor()
+
+        cursor.execute(
+            'update players set wins = ? where name = ?',
+            (wins, player.get_name())
+        )
+
+        self._connection.commit()
+
+    def update_defeats(self, player):
+        defeats = player.get_defeats() + 1
+
+        cursor = self._connection.cursor()
+
+        cursor.execute(
+            'update players set defeats = ? where name = ?',
+            (defeats, player.get_name())
+        )
+
+        self._connection.commit()
+
+player_repository = PlayerRepository(get_database_connection())
+#con = PlayerRepository(get_database_connection())
+#testi = play_service.initialize_player('testi1')
+#testi.add_win()
+#player_repository.check_player('Nella')
+#print(player_repository.check_player(testi))
+#print(player_repository.get_top_ten())
+#print(testi.get_wins())

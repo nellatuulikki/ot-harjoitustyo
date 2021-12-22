@@ -1,3 +1,7 @@
+import string
+import random
+import time
+
 class Game:
     """Luokka, jonka avulla ylläpidetään peliä
 
@@ -27,6 +31,9 @@ class Game:
         self.winner = None
         self.player_1_turn = None
         self.game_board = None
+        self.game_id = None
+        self.duration = None
+        self.moves = 0
 
     def initialize_game(self):
         """"""
@@ -34,6 +41,9 @@ class Game:
         self.create_game_board()
         self.winner = 'No winner yet'
         self.player_1_turn = True
+        self.game_duration = time.time()
+        self.game_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=5))
+
 
     def create_game_board(self):
         """Luo pelilauta"""
@@ -86,6 +96,7 @@ class Game:
         :return:
         """
 
+        self.moves += 1
         self.game_board[row][column] = 'X'
         self.get_game_status(row, column)
         self.change_turns()
@@ -99,6 +110,7 @@ class Game:
         :return:
         """
 
+        self.moves += 1
         self.game_board[row][column] = 'O'
         self.get_game_status(row, column)
         self.change_turns()
@@ -112,8 +124,10 @@ class Game:
 
         if self.check_horizontal(row, mark) == True or self.check_vertical(column, mark) == True or self.check_left_diagonal(row, column, mark) == True or self.check_right_diagonal(row, column, mark) == True:
             self.check_winner()
+            self.game_duration -= time.time()
         elif any("" in row for row in self.game_board) is False:
             self.winner = 'No winner'
+            self.game_duration -= time.time()
 
     def check_winner(self):
 

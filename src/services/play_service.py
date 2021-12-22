@@ -1,10 +1,20 @@
-from entities.player import Player
-from entities.game import Game
+from src.entities.player import Player
+from src.entities.game import Game
+from datetime import date
+
+from src.repositories.game_repository import (
+    game_repository as default_game_repository
+)
+
+from src.repositories.player_repository import (
+    player_repository as default_player_repository
+)
 
 
 class PlayService:
     """Sovelluslogiikasta vastaava luokka"""
-    def __init__(self):
+
+    def __init__(self, game_repository=default_game_repository, player_repository=default_player_repository):
         """Luokan konstruktori. Luo uuden sovelluslogiikasta vastaavan palvelun"""
 
         self.player_1 = None
@@ -12,6 +22,9 @@ class PlayService:
         self.game = None
         self.board_height = None
         self.board_width = None
+        self._game_repository = game_repository
+        self._player_repository = player_repository
+        self.date = date.today().strftime("%d/%m/%Y")
 
     def create_players(self, player_1, player_2, board_height, board_width):
         """Luo 2 Pelaaja-oliota ja Peli-olion.
@@ -23,7 +36,8 @@ class PlayService:
             board_width: Kokonaislukuarvo, joka kuvaa pelilaudan leveyttä
         """
 
-        self.player_1, self.player_2 = Player(player_1), Player(player_2)
+        self.player_1 = self.initialize_player(player_1)
+        self.player_2 = self.initialize_player(player_2)
 
         self.board_width, self.board_height = board_width, board_height
 
@@ -96,8 +110,9 @@ class PlayService:
 
         self.game.player_1_makes_move(row, column)
 
-        if self.game.get_winner() == self.get_player_2():
-            self.player_1.add_win()
+        if self.game.get_winner() == self.get_player_1():
+            self.update_wins(self.player_1)
+            self.update_defeats(self.player_2)
 
     def player_2_move(self, row, column):
         """Pelaaja 2 asettaa merkinsä pelilaudalle ja tarkistaa mikä pelin tilanne on.
@@ -110,8 +125,35 @@ class PlayService:
 
         self.game.player_2_makes_move(row, column)
 
-        if self.game.get_winner() == self.get_player_1():
-            self.player_2.add_win()
+        if self.game.get_winner() == self.get_player_2():
+            self.update_wins(self.player_2)
+            self.update_defeats(self.player_1)
+
+    def initialize_player(self, name):
+        player_data = self._player_repository.check_player(name)
+        if player_data is None:
+            self._player_repository.create_player(name)
+            return Player(name, 0, 0)
+        else:
+            return Player(name, player_data['wins'], player_data['defeats'])
+
+    def save_game(self):
+        self._game_repository.create_game(self.game, self.player_1, self.player_2)
+
+    def get_last_ten(self):
+        return self._game_repository.get_last_ten()
+
+    def update_wins(self, player):
+        self._player_repository.update_wins(player)
+
+    def update_defeats(self, player):
+        self._player_repository.update_defeats(player)
+
+    def get_top_players(self):
+        return self._player_repository.get_top_ten()
 
 
 play_service = PlayService()
+#testi = play_service.initialize_player('testi5')
+#play_service.update_wins(testi)
+#play_service.update_defeats(testi)
