@@ -1,6 +1,5 @@
-from src.database_connection import get_database_connection
+from database_connection import get_database_connection
 import pandas as pd
-from src.entities.player import Player
 
 
 class PlayerRepository:
@@ -65,6 +64,16 @@ class PlayerRepository:
             'update players set defeats = ? where name = ?',
             (defeats, player.get_name())
         )
+
+        self._connection.commit()
+
+    def delete_all(self):
+        """Poistaa kaikki käyttäjät.
+        """
+
+        cursor = self._connection.cursor()
+
+        cursor.execute('delete from players')
 
         self._connection.commit()
 

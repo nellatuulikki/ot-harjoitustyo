@@ -1,12 +1,12 @@
-from src.entities.player import Player
-from src.entities.game import Game
+from entities.player import Player
+from entities.game import Game
 from datetime import date
 
-from src.repositories.game_repository import (
+from repositories.game_repository import (
     game_repository as default_game_repository
 )
 
-from src.repositories.player_repository import (
+from repositories.player_repository import (
     player_repository as default_player_repository
 )
 

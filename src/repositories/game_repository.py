@@ -1,4 +1,4 @@
-from src.database_connection import get_database_connection
+from database_connection import get_database_connection
 import pandas as pd
 from datetime import date
 
@@ -9,6 +9,7 @@ class GameRepository:
 
         self._connection = connection
         self.date = date.today().strftime("%d/%m/%Y")
+
 
     def create_game(self, game, player_1, player_2):
 
@@ -38,7 +39,5 @@ class GameRepository:
 
 
 game_repository = GameRepository(get_database_connection())
-con = GameRepository(get_database_connection())
-#con.create_game('test1', 'test', 'test', 'test', 'test', 2, 3, 'test')
-output = con.get_last_ten()
-print(output)
+#con = GameRepository(get_database_connection())
+#output = con.get_last_ten()
