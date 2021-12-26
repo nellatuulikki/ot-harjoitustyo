@@ -4,7 +4,7 @@
 
 ## TicTacToe
 
-Sovelluksen avulla kaksi pelaajaa voi pelata ristinollaa pelilaudalla, jonka koon pelaajat saavat päättää. Tällä hetkellä sovellus toimii pelilaudoilla, joka on vähintään 5x5 ja enintään 20x20. Pelaajat määrittelevät itselleen nimen, ja voivat seurata sovelluksesta mahdollista omaa sijoitustaan parhaimpien pelaajien joukossa. Sovellus myös näyttää viiden edellisen pelin statistiikat. Sovellus toimii Pythonin 3.8-versiolla.
+Sovelluksen avulla kaksi pelaajaa voi pelata ristinollaa pelilaudalla, jonka koon pelaajat saavat päättää. Tällä hetkellä sovellus toimii pelilaudoilla, joka on vähintään 5x5. Pelaajat määrittelevät itselleen nimen, ja voivat seurata sovelluksesta mahdollista omaa sijoitustaan parhaimpien pelaajien joukossa. Sovellus myös näyttää viiden edellisen pelin statistiikat. Sovellus toimii Pythonin 3.8-versiolla.
 
 ## Dokumentaatio
 
