@@ -42,7 +42,7 @@ Pelin loppuessa tulee 5 sekunnin viive ennen kuin peli siirtyy näytölle, josta
 
 ![image](https://user-images.githubusercontent.com/94007460/147417721-bdbbc064-1d64-4187-a83c-e06d68f181c3.png)
 
-Jos Pelaaja palaa etusivulle, pelin tiedot näkyvät viimeisimpien 5 pelin joukossa. Jos pelaajat ovat olleet hyvie heidän nimensä saattaa ilmestyä myös Top 5 pelaajien listalle.
+Jos sovellus ohjataan takaisin etusivulle, pelin tiedot näkyvät viimeisimpien 5 pelin joukossa. Jos pelaajat ovat olleet hyviä, heidän nimensä saattaa ilmestyä myös Top 5 pelaajien listalle. Alla esimerkki, miltä datat näyttvät kuin pelejä on pelattu vain yksi.
 
 ![image](https://user-images.githubusercontent.com/94007460/147417765-220e51ca-c9c0-44c5-b320-39a8ac460f25.png)
 
