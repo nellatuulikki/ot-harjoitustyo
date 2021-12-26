@@ -12,7 +12,7 @@ Tällä hetkellä kolme näkymää:
 - Pelinäkymä
 - Valikkonäky
   
-Näkymistä vastaa UI-luokka ja molemmat näkymät ovat tuotettu omina luokkinaan. Käyttöliittymää loudessa on pyritty siihen, että sovelluslogiikka olisi mahdollisimman eriytetty. 
+Näkymistä vastaa UI-luokka ja kaikki näkymät ovat tuotettu omina luokkinaan. Käyttöliittymää loudessa on pyritty siihen, että sovelluslogiikka olisi mahdollisimman eriytetty, ja se kutsuu vain PlayService-luokassa olevia metodeja.
 
 ## Sovelluslogiikka
 
@@ -27,7 +27,7 @@ PlayService luokka vastaa sovelluslogiikasta ja se mahdollistaa käyttöliittym�
 
 ## Tietojen pysyväistallennus
 
-Tulossa
+Repositories luokat ovat vastuussa sovelluksessa luotujen tietojen tallennuksesta. PlayerRepository ja GameRepository tallentavat tietoja SQLite-tietokantaan. Pelaaja-tiedot tallennetaan players tauluun ja Peli-tiedot tallennetaan games-tauluun. Taulut ovat alustettu initialize_database.py-tiedostossa Luokissa on noudatettu Repository-suunnittelumallia.
 
 ## Päätoiminnallisuudet
 
@@ -36,7 +36,7 @@ Tässä alakohdassa esitetään muutama sovelluksen päätoiminallisuus
 ### Pelin luominen
 Peli alkaa kun syötekenttiin on määritelty kaksi pelaajaa ja käyttäjä on painanut Start The Game näppäintä.
 
-![image](https://user-images.githubusercontent.com/94007460/145107172-d5790c39-ed20-46e9-9f0d-ca2ac1cea0dd.png)
+![image](https://user-images.githubusercontent.com/94007460/147419157-ae663132-e6ef-4fe1-b0bf-43b05b28d7ad.png)
 
 Sen jälkeen tapahtumakäsittelijä kutsuu sovelluslogiikan PlayService metodia create_player, joille annetaan parametriksi käyttäjän kirjoittamat pelaajien nimet ja automaattisesti numero 3 (pelilaudan automaattinen koko sovelluksen perustoiminnallisuudessa). Create_players metodi luo kaksi Player-oliota ja yhden Game-olion, joka saa parametreikseen juuri luodut kaksi Player oliota sekä numeron 3. Tässä yhteydessä myös tietokantaan tallennetaan alustavat tiedot pelistä. Tämän jälkeen käyttöliittymä vaihtaa TicTacToeView:n ja peli voi alkaa.
 
