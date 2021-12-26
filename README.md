@@ -29,6 +29,10 @@ Sovelluksen avulla kaksi pelaajaa voi pelata ristinollaa pelilaudalla, jonka koo
 
   poetry install
   
+### Suorita alustustoimenpiteet
+
+  poetry run invoke build
+  
 ### Käynnistä sovellus 
   
   poetry run invoke start
