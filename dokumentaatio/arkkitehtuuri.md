@@ -10,7 +10,7 @@ Pakkaus ui sisältää käyttöliittymän, services sovelluslogiikan ja reposito
 Tällä hetkellä kolme näkymää:
 - Pelaajien nimien määrittely
 - Pelinäkymä
-- Valikkonäky
+- Valikkonäkymä
   
 Näkymistä vastaa UI-luokka ja kaikki näkymät ovat tuotettu omina luokkinaan. Käyttöliittymää loudessa on pyritty siihen, että sovelluslogiikka olisi mahdollisimman eriytetty, ja se kutsuu vain PlayService-luokassa olevia metodeja.
 
@@ -52,6 +52,13 @@ Kun pelaaja painaa nappulaa ruudukolla tapahtumakäsittelijä kutsuu sovelluslog
 
 Kun pelaaja painaa nappulaa ruudukolla tapahtumakäsittelijä kutsuu sovelluslogikaan player_1_move metodia, jossa on parametrina nappulan koordinaatit ruudukosta. Sovelluslogiikka kutsuu Game-olion metodia make_move, joka saa parametrina ruudukon ja pelaajan 1 merkin. Game-olion attribuutti move saa yhden arvon lisää. Game-olio tarkastaa get_game_status metodilla, onko ruudukossa 5 peräkkäistä merkkiä. Nyt ruudukossa on 5 peräkkäistä, jolloin check_winner metodilla muutetaan winner attribuutti ajantasalle. PlayService havaitsee että pelissä on voittajaa ja tallentaa molempien pelaajien tietoihin tiedot hyviöstä ja voitosta. Sovelluslogiikka palauttaa käyttöliittymälle tiedon että peli on voitettu. Pelin näkymä vaihtuu game_ended_view:hin.
 
+### Muut toiminnallisuudet
+
+Pelin loppuessa Game-olion tiedot tallennetaan Games-tietokantaan. Jos palataan alkusivulle niin datasettien tiedot ovat muuttuneet vastamaan reaaliaikaista tilannetta.
+
+## Ohjelman rakenteen heikkoudet
+
+Jonkin verran toisteisuutta sovelluslogiikassa. Mietin myös olisiko pitänyt luoda oma erillinen tietomalli pelilaudalle.
 
 
 
