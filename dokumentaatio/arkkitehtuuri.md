@@ -38,9 +38,10 @@ Peli alkaa kun syötekenttiin on määritelty kaksi pelaajaa ja käyttäjä on p
 
 ![image](https://user-images.githubusercontent.com/94007460/147419157-ae663132-e6ef-4fe1-b0bf-43b05b28d7ad.png)
 
-Sen jälkeen tapahtumakäsittelijä kutsuu sovelluslogiikan PlayService metodia create_player, joille annetaan parametriksi käyttäjän kirjoittamat pelaajien nimet ja automaattisesti numero 3 (pelilaudan automaattinen koko sovelluksen perustoiminnallisuudessa). Create_players metodi luo kaksi Player-oliota ja yhden Game-olion, joka saa parametreikseen juuri luodut kaksi Player oliota sekä numeron 3. Tässä yhteydessä myös tietokantaan tallennetaan alustavat tiedot pelistä. Tämän jälkeen käyttöliittymä vaihtaa TicTacToeView:n ja peli voi alkaa.
+Sen jälkeen tapahtumakäsittelijä kutsuu sovelluslogiikan PlayService metodia create_players, joille annetaan parametriksi käyttäjän kirjoittamat pelaajien nimet ja ruudukon koko. Create_players metodi luo kaksi Player-oliota ja yhden Game-olion, joka saa parametreikseen juuri luodut kaksi Player oliota sekä ruudukon korkeuden ja leveyden. Tässä yhteydessä myös tietokantaan tallennetaan alustavat tiedot pelistä. Tämän jälkeen käyttöliittymä vaihtaa TicTacToeView:n ja peli voi alkaa.
 
 ![image](https://user-images.githubusercontent.com/94007460/147419478-2b3d7dd9-a660-4ecb-9180-673b41c67c90.png)
+
 
 
 ![image](https://user-images.githubusercontent.com/94007460/147419723-c67e4748-70cc-40be-b289-be832f74a703.png)
