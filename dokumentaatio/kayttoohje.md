@@ -3,19 +3,24 @@
 
 ## Ennen Peliä
 
-Aja komento ennen itse sovelluksen ajoa
+Asennetaan riippuvuudet komennolla
 
 -   poetry install
+
+Jonka jälkeen asennetaan alustustoimenpiteet:
+
+-   poetry run invoke buils
 
 Ohjelma käynnistetään
 
 -   poetry run invoke start
 
+
 ## Pelaajien valinta
 
-Sovelluksen alkaessa näytölle ilmestyy käyttöliittymä, josta pelaajat voivat nimetä itsensä ja määritellä pelilaudan koon. Nimi ei saa olla yli 10 merkkiä pitkä ja pelilaudan koko tulee määritellä kokonaisluvuilla alkaen 5x5 pelilaudasta (rajoitukset puuttuvat vielä tulevat lopulliseen versioon). Peli alkaa 'Start the game'-nappulan painalluksesta.
+Sovelluksen alkaessa näytölle ilmestyy käyttöliittymä, josta pelaajat voivat nimetä itsensä ja määritellä pelilaudan koon. Nimi ei saa olla yli 10 merkkiä pitkä ja pelilaudan koko tulee määritellä kokonaisluvuilla alkaen 5x5 pelilaudasta aina 20x20 pelilautaan. Peli alkaa 'Start the game'-nappulan painalluksesta.
 
-![image](https://user-images.githubusercontent.com/94007460/146065077-e89932f2-2e8d-4a77-a427-b7cbe4cea61e.png)
+![image](https://user-images.githubusercontent.com/94007460/147417660-2891012e-f875-4d97-832d-b5c49f322939.png)
 
 
 ## Pelin aikana
