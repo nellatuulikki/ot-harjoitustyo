@@ -18,7 +18,8 @@ Näkymistä vastaa UI-luokka ja molemmat näkymät ovat tuotettu omina luokkinaa
 
 Sovelluksen tietomalli koostuu kahdesta luokasta Player ja Game. Player luokka sisältää tiedot peliä pelaavista pelaajista ja Game sisältää tietoa itse pelistä.
 
-![image](https://user-images.githubusercontent.com/94007460/144122858-00f06919-d692-415d-90e9-2247380f466a.png)
+![image](https://user-images.githubusercontent.com/94007460/147418836-2d0054a4-3dc3-4441-8ba1-5b72f0676799.png)
+
 
 PlayService luokka vastaa sovelluslogiikasta ja se mahdollistaa käyttöliittymän pääsyn luokkiin Game ja Player. Myöhemmin kurssin aikana sovellukseen lisätään pakkaus repositories ja sen luokat GameRepository ja UserRepository.
 
