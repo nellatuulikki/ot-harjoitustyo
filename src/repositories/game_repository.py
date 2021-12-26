@@ -2,8 +2,6 @@ from database_connection import get_database_connection
 import pandas as pd
 from datetime import date
 
-def get_player(row):
-    return Player(row['name'], row['wins'], row['defeats']) if row else None
 
 class GameRepository:
 

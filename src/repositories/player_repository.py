@@ -81,11 +81,5 @@ class PlayerRepository:
 
         self._connection.commit()
 
+
 player_repository = PlayerRepository(get_database_connection())
-#con = PlayerRepository(get_database_connection())
-#testi = play_service.initialize_player('testi1')
-#testi.add_win()
-#player_repository.check_player('Nella')
-#print(player_repository.check_player(testi))
-player_repository.delete_all()
-#print(testi.get_wins())

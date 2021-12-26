@@ -154,6 +154,3 @@ class PlayService:
 
 
 play_service = PlayService()
-# testi = play_service.initialize_player('testi5')
-# play_service.update_wins(testi)
-# play_service.update_defeats(testi)

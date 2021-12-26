@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter import constants
 from services.play_service import play_service
-import tkinter.font as font
 
 
 class TicTacToeView:
