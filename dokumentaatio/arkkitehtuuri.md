@@ -43,6 +43,7 @@ Sen jälkeen tapahtumakäsittelijä kutsuu sovelluslogiikan PlayService metodia 
 ![image](https://user-images.githubusercontent.com/94007460/147419478-2b3d7dd9-a660-4ecb-9180-673b41c67c90.png)
 
 
+![image](https://user-images.githubusercontent.com/94007460/147419723-c67e4748-70cc-40be-b289-be832f74a703.png)
 
 
 ### Pelin loppuminen
