@@ -27,11 +27,12 @@ Sovelluksen alkaessa näytölle ilmestyy käyttöliittymä, josta pelaajat voiva
 
 Peli alkaa tyhjältä pelilaudalta. Pelissä määritellään kaksi pelaajaa, jotka vuorotellen painavat pelilaudan nappuloita. Pelaaja 1 pelaa risti-merkeillä ja Pelaaja 2 pelaa nolla-merkeillä. Pelaaja 1 aloittaa aina pelin. Pelilaudalla olevaa nappulaa painamalla voi merkitä ruudun omalle merkille.
 
-![image](https://user-images.githubusercontent.com/94007460/146065690-eab9ec89-3b93-47f3-a8d9-aaf62d260c59.png)
+![image](https://user-images.githubusercontent.com/94007460/147417682-be094b5f-444b-4643-b118-e2bd4c0d1dae.png)
 
 Yhteen boksiin voi merkitä vain yhden merkin, ja peli ilmoittaa, jos boxissa on jo merkki.
 
-![image](https://user-images.githubusercontent.com/94007460/146065972-c17e837e-d448-4a39-938e-dad6f8018b25.png)
+![image](https://user-images.githubusercontent.com/94007460/147417696-59c444fe-76ee-4311-a2cc-2502ae7a9344.png)
+
 
 Peli loppuu kun jompikumpi on saanut 5 merkkiä peräkkäin joko pysty-, vaaka- tai vinoriveille tai pelilauta on täynnä merkkejä. 
 
