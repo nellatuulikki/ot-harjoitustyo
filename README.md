@@ -23,7 +23,7 @@ Sovelluksen avulla kaksi pelaajaa voi pelata ristinollaa pelilaudalla, jonka koo
 
 [Release 2](https://github.com/nellatuulikki/ot-harjoitustyo/releases/tag/vk6)
 
-[Release 2](https://github.com/nellatuulikki/ot-harjoitustyo/releases/tag/lopputyofinal)
+[Final Release](https://github.com/nellatuulikki/ot-harjoitustyo/releases/tag/lopputyofinal)
 
 ## Sovelluksen asennus
 
