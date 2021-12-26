@@ -23,6 +23,9 @@ Sovelluksen haaraumakattavuus on 93% (mukana ei ole käyttöliittymää).
 
 Testauksen ulkopuolelle jäi build.py ja initialize_database.py, myöskin joissain tiedostoissa (kuten play_service.py ja player_repository) olisi pitänyt testatat vielä enemmän.
 
+![image](https://user-images.githubusercontent.com/94007460/147418527-8c63816a-2580-4194-bc2b-c54cde1f4875.png)
+
+
 ## Järjestelmätestaus
 
 # Asennus ja konfigurointi
