@@ -40,5 +40,9 @@ Peli loppuu kun jompikumpi on saanut 5 merkkiä peräkkäin joko pysty-, vaaka- 
 
 Pelin loppuessa tulee 5 sekunnin viive ennen kuin peli siirtyy näytölle, josta saa valita haluavatko pelaajat pelata uudelleen vai haluatko he palata etusivulle. 
 
-![image](https://user-images.githubusercontent.com/94007460/146065903-9faa8d41-d22f-43cc-b473-a6a52a3e1760.png)
+![image](https://user-images.githubusercontent.com/94007460/147417721-bdbbc064-1d64-4187-a83c-e06d68f181c3.png)
+
+Jos Pelaaja palaa etusivulle, pelin tiedot näkyvät viimeisimpien 5 pelin joukossa. Jos pelaajat ovat olleet hyvie heidän nimensä saattaa ilmestyä myös Top 5 pelaajien listalle.
+
+![image](https://user-images.githubusercontent.com/94007460/147417765-220e51ca-c9c0-44c5-b320-39a8ac460f25.png)
 
