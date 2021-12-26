@@ -38,16 +38,20 @@ Peli alkaa kun syötekenttiin on määritelty kaksi pelaajaa ja käyttäjä on p
 
 ![image](https://user-images.githubusercontent.com/94007460/147419157-ae663132-e6ef-4fe1-b0bf-43b05b28d7ad.png)
 
-Sen jälkeen tapahtumakäsittelijä kutsuu sovelluslogiikan PlayService metodia create_players, joille annetaan parametriksi käyttäjän kirjoittamat pelaajien nimet ja ruudukon koko. Create_players metodi luo kaksi Player-oliota ja yhden Game-olion, joka saa parametreikseen juuri luodut kaksi Player oliota sekä ruudukon korkeuden ja leveyden. Tässä yhteydessä myös tietokantaan tallennetaan alustavat tiedot pelistä. Tämän jälkeen käyttöliittymä vaihtaa TicTacToeView:n ja peli voi alkaa.
+Sen jälkeen tapahtumakäsittelijä kutsuu sovelluslogiikan PlayService metodia create_players, joille annetaan parametriksi käyttäjän kirjoittamat pelaajien nimet ja ruudukon koko. Create_players metodi luo kaksi Player-oliota ja yhden Game-olion, joka saa parametreikseen juuri luodut kaksi Player oliota sekä ruudukon korkeuden ja leveyden. Tämän jälkeen käyttöliittymä vaihtaa TicTacToeView:n ja alkaa näyttämään peliä ruudulla.
+
+### Pelimerkin 
 
 ![image](https://user-images.githubusercontent.com/94007460/147419478-2b3d7dd9-a660-4ecb-9180-673b41c67c90.png)
 
+Kun pelaaja painaa nappulaa ruudukolla tapahtumakäsittelijä kutsuu sovelluslogikaan player_1_move metodia, jossa on parametrina nappulan koordinaatit ruudukosta. Sovelluslogiikka kutsuu Game-olion metodia make_move, joka saa parametrina ruudukon ja pelaajan 1 merkin. Game-olion attribuutti move saa yhden arvon lisää. Game-olio tarkastaa get_game_status metodilla, onko ruudukossa 5 peräkkäistä merkkiä. PlayService havaitsee ettei pelissä ole voittajaa, ja palauttaa käyttöliittymälle tiedon että peliä ei ole voitettu ja peli voi jatkua. Pelin käyttöikkunaan ilmestyy nappulaan X-merkki.
 
+### Pelin loppuminen
 
 ![image](https://user-images.githubusercontent.com/94007460/147419723-c67e4748-70cc-40be-b289-be832f74a703.png)
 
+Kun pelaaja painaa nappulaa ruudukolla tapahtumakäsittelijä kutsuu sovelluslogikaan player_1_move metodia, jossa on parametrina nappulan koordinaatit ruudukosta. Sovelluslogiikka kutsuu Game-olion metodia make_move, joka saa parametrina ruudukon ja pelaajan 1 merkin. Game-olion attribuutti move saa yhden arvon lisää. Game-olio tarkastaa get_game_status metodilla, onko ruudukossa 5 peräkkäistä merkkiä. Nyt ruudukossa on 5 peräkkäistä, jolloin check_winner metodilla muutetaan winner attribuutti ajantasalle. PlayService havaitsee että pelissä on voittajaa ja tallentaa molempien pelaajien tietoihin tiedot hyviöstä ja voitosta. Sovelluslogiikka palauttaa käyttöliittymälle tiedon että peli on voitettu. Pelin näkymä vaihtuu game_ended_view:hin.
 
-### Pelin loppuminen
 
 
 
