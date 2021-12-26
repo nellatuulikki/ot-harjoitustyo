@@ -3,7 +3,7 @@ from ui.select_players_view import NamePlayersView
 from ui.game_ended_view import EndView
 
 
-class UI:
+class Ui:
     def __init__(self, root):
         self._root = root
         self._current_view = None

@@ -1,6 +1,5 @@
 from entities.player import Player
 from entities.game import Game
-from datetime import date
 
 from repositories.game_repository import (
     game_repository as default_game_repository
@@ -24,7 +23,6 @@ class PlayService:
         self.board_width = None
         self._game_repository = game_repository
         self._player_repository = player_repository
-        self.date = date.today().strftime("%d/%m/%Y")
 
     def create_players(self, player_1, player_2, board_height, board_width):
         """Luo 2 Pelaaja-oliota ja Peli-olion.
@@ -47,6 +45,14 @@ class PlayService:
         """"Luo pelilaudan ja asettaa muuttujille pelivuoro ja voittaja arvot"""
 
         self.game.initialize_game()
+
+    def initialize_player(self, name):
+        player_data = self._player_repository.check_player(name)
+        if player_data is None:
+            self._player_repository.create_player(name)
+            return Player(name, 0, 0)
+        else:
+            return player_data
 
     def get_height(self):
         """Palauttaa pelilaudan korkeuden
@@ -108,11 +114,10 @@ class PlayService:
             column: Kokonaisluku, joka on pelilaudan y-koordinaatti
         """
 
-        self.game.player_1_makes_move(row, column)
+        self.game.make_move(row, column, 'X')
 
         if self.game.get_winner() == self.get_player_1():
-            self.update_wins(self.player_1)
-            self.update_defeats(self.player_2)
+            self.initialize_outcome(self.player_1, self.player_2)
 
     def player_2_move(self, row, column):
         """Pelaaja 2 asettaa merkinsä pelilaudalle ja tarkistaa mikä pelin tilanne on.
@@ -123,19 +128,14 @@ class PlayService:
             column: Kokonaisluku, joka on pelilaudan y-koordinaatti
         """
 
-        self.game.player_2_makes_move(row, column)
+        self.game.make_move(row, column, 'O')
 
         if self.game.get_winner() == self.get_player_2():
-            self.update_wins(self.player_2)
-            self.update_defeats(self.player_1)
+            self.initialize_outcome(self.player_2, self.player_1)
 
-    def initialize_player(self, name):
-        player_data = self._player_repository.check_player(name)
-        if player_data is None:
-            self._player_repository.create_player(name)
-            return Player(name, 0, 0)
-        else:
-            return Player(name, player_data['wins'], player_data['defeats'])
+    def initialize_outcome(self, winner, loser):
+        self.update_wins(winner)
+        self.update_defeats(loser)
 
     def save_game(self):
         self._game_repository.create_game(self.game, self.player_1, self.player_2)
@@ -154,6 +154,6 @@ class PlayService:
 
 
 play_service = PlayService()
-#testi = play_service.initialize_player('testi5')
-#play_service.update_wins(testi)
-#play_service.update_defeats(testi)
+# testi = play_service.initialize_player('testi5')
+# play_service.update_wins(testi)
+# play_service.update_defeats(testi)

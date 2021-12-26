@@ -2,6 +2,8 @@ from database_connection import get_database_connection
 import pandas as pd
 from datetime import date
 
+def get_player(row):
+    return Player(row['name'], row['wins'], row['defeats']) if row else None
 
 class GameRepository:
 
@@ -9,7 +11,6 @@ class GameRepository:
 
         self._connection = connection
         self.date = date.today().strftime("%d/%m/%Y")
-
 
     def create_game(self, game, player_1, player_2):
 
@@ -37,7 +38,26 @@ class GameRepository:
 
         return df
 
+    def delete_all(self):
+        """Poistaa kaikki käyttäjät.
+        """
+
+        cursor = self._connection.cursor()
+
+        cursor.execute('delete from games')
+
+        self._connection.commit()
+
+    def check_game(self, game):
+        cursor = self._connection.cursor()
+
+        cursor.execute(
+            'select * from games where game_id = ?', (game.game_id,)
+        )
+
+        row = cursor.fetchone()
+        return row
+
 
 game_repository = GameRepository(get_database_connection())
-#con = GameRepository(get_database_connection())
-#output = con.get_last_ten()
+

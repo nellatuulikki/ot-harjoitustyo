@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import constants
 from services.play_service import play_service
+import tkinter.font as font
 
 
 class TicTacToeView:
@@ -24,18 +25,17 @@ class TicTacToeView:
     def _handle_board(self):
 
         status_label = tk.Label(self._frame, text=f"Let's play Tic Tac Toe! It's {self.player1}'s turn to make a move")
-        status_label.grid(row=0, columnspan=6)
+        status_label.grid(row=0, columnspan=play_service.get_width())
 
         for row in range(0, play_service.get_height()):
             list_of_buttons = []
             for col in range(0, play_service.get_width()):
+
                 button = tk.Button(master=self._frame,
                                    text="",
-                                   height=6,
-                                   width=11,
                                    command=lambda row=row, col=col: self._handle_make_move(row, col, status_label))
 
-                button.grid(row=row + 1, column=col)
+                button.grid(row=row + 1, column=col, sticky="NSEW")
                 list_of_buttons.append(button)
             self.buttons.append(list_of_buttons)
 
@@ -62,8 +62,17 @@ class TicTacToeView:
         if play_service.get_winner() != 'No winner yet':
             self._frame.after(5000, self.handle_end_view())
 
+    def _initialize_grid(self):
+
+        for col in range(0, play_service.get_width()):
+            self._frame.grid_columnconfigure(col, weight=1)
+
+        for row in range(0, play_service.get_height()):
+            self._frame.grid_columnconfigure(row, weight=1)
+
     def _initialize(self):
-
+        self._root.geometry("400x400")
         self._frame = tk.Frame(master=self._root)
-
+        self._initialize_grid()
         self._handle_board()
+

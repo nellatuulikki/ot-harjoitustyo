@@ -1,12 +1,12 @@
 from tkinter import Tk
-from ui.ui import UI
+from ui.ui import Ui
 
 
 def main():
 
     window = Tk()
     window.title('Tic-Tac-Toe')
-    ui = UI(window)
+    ui = Ui(window)
     ui.start()
     window.mainloop()
 

@@ -1,6 +1,6 @@
 import string
 import random
-import time
+import timeit
 
 class Game:
     """Luokka, jonka avulla ylläpidetään peliä
@@ -33,7 +33,7 @@ class Game:
         self.game_board = None
         self.game_id = None
         self.duration = None
-        self.moves = 0
+        self.moves = None
 
     def initialize_game(self):
         """"""
@@ -41,9 +41,12 @@ class Game:
         self.create_game_board()
         self.winner = 'No winner yet'
         self.player_1_turn = True
-        self.game_duration = time.time()
+        self.duration = timeit.default_timer()
         self.game_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=5))
+        self.moves = 0
 
+    def end_timing(self):
+        self.duration = round(timeit.default_timer() - self.duration)
 
     def create_game_board(self):
         """Luo pelilauta"""
@@ -54,16 +57,6 @@ class Game:
             board.append(['']*self.board_width)
 
         self.game_board = board
-
-    def add_winner(self, player):
-        """Aseta Pelaaja-olio voittajaksi
-
-        Returns:
-            Palauta voittanut Pelaaja-olio
-        """
-        self.winner = player
-
-        return player
 
     def get_winner(self):
         """Palauta voittaja
@@ -87,8 +80,8 @@ class Game:
         else:
             self.player_1_turn = True
 
-    def player_1_makes_move(self, row, column):
-        """Suorittaa Pelaajan 1 siirron, tarkistaa pelin tilanteen ja vaihtaa vuoroa
+    def make_move(self, row, column, mark):
+        """Suorittaa Pelaajan siirron, tarkistaa pelin tilanteen ja vaihtaa vuoroa
 
         Args:
             row: pelaajan siirron x-koordinaatti kokonaislukuna
@@ -97,37 +90,20 @@ class Game:
         """
 
         self.moves += 1
-        self.game_board[row][column] = 'X'
-        self.get_game_status(row, column)
+        self.game_board[row][column] = mark
+        self.get_game_status(row, column, mark)
         self.change_turns()
 
-    def player_2_makes_move(self, row, column):
-        """Suorittaa Pelaajan 1 siirron, tarkistaa pelin tilanteen ja vaihtaa vuoroa
+    def get_game_status(self, row, column, mark):
 
-        Args:
-            row: pelaajan siirron x-koordinaatti kokonaislukuna
-            column: pelaajan siirron y-koordinaatti kokonaislukuna
-        :return:
-        """
-
-        self.moves += 1
-        self.game_board[row][column] = 'O'
-        self.get_game_status(row, column)
-        self.change_turns()
-
-    def get_game_status(self, row, column):
-
-        if self.player_1_turn:
-            mark = "X"
-        else:
-            mark = "O"
-
-        if self.check_horizontal(row, mark) == True or self.check_vertical(column, mark) == True or self.check_left_diagonal(row, column, mark) == True or self.check_right_diagonal(row, column, mark) == True:
+        if self.check_horizontal(row, mark) is True \
+                or self.check_vertical(column, mark) is True \
+                or self.check_left_diagonal(row, column, mark) is True \
+                or self.check_right_diagonal(row, column, mark) is True:
             self.check_winner()
-            self.game_duration -= time.time()
         elif any("" in row for row in self.game_board) is False:
             self.winner = 'No winner'
-            self.game_duration -= time.time()
+            self.end_timing()
 
     def check_winner(self):
 
@@ -135,6 +111,7 @@ class Game:
             self.winner = self.player_1
         else:
             self.winner = self.player_2
+        self.end_timing()
 
     def check_horizontal(self, row, mark):
 
@@ -164,15 +141,13 @@ class Game:
 
         return False
 
-    def check_left_diagonal(self, column, row, mark):
-
+    def check_left_diagonal(self, row, column, mark):
         while not column == 0 and not row == self.board_height - 1:
             column -= 1
             row += 1
-
-        start_row = row
+        start_col = column
         count = 0
-        for col in range(start_row, self.board_width):
+        for col in range(start_col, self.board_width):
             if self.game_board[row][col] == mark:
                 count += 1
             else:
@@ -181,20 +156,19 @@ class Game:
 
             if count == 5:
                 return True
-            elif row == self.board_height:
+            elif row == self.board_height or row < 0:
                 return False
 
         return False
 
-    def check_right_diagonal(self, column, row, mark):
-
+    def check_right_diagonal(self, row, column, mark):
         while not column == 0 and not row == 0:
             column -= 1
             row -= 1
 
-        start_row = row
+        start_col = column
         count = 0
-        for col in range(start_row, self.board_width):
+        for col in range(start_col, self.board_width):
             if self.game_board[row][col] == mark:
                 count += 1
             else:
@@ -207,4 +181,3 @@ class Game:
                 return False
 
         return False
-

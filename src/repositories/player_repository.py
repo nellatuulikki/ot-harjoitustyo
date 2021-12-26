@@ -1,5 +1,10 @@
 from database_connection import get_database_connection
 import pandas as pd
+from entities.player import Player
+
+
+def get_player(row):
+    return Player(row['name'], row['wins'], row['defeats']) if row else None
 
 
 class PlayerRepository:
@@ -41,7 +46,7 @@ class PlayerRepository:
         )
 
         row = cursor.fetchone()
-        return row
+        return get_player(row)
 
     def update_wins(self, player):
         wins = player.get_wins() + 1
@@ -68,8 +73,7 @@ class PlayerRepository:
         self._connection.commit()
 
     def delete_all(self):
-        """Poistaa kaikki käyttäjät.
-        """
+        """Poistaa kaikki pelaajat."""
 
         cursor = self._connection.cursor()
 
@@ -83,5 +87,5 @@ player_repository = PlayerRepository(get_database_connection())
 #testi.add_win()
 #player_repository.check_player('Nella')
 #print(player_repository.check_player(testi))
-#print(player_repository.get_top_ten())
+player_repository.delete_all()
 #print(testi.get_wins())
